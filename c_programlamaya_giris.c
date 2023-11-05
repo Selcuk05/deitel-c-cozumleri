@@ -265,7 +265,7 @@ void _2_33(){
     scanf("%lf", &ortalamaYakit);
     printf("Gunluk park masrafi: ");
     scanf("%lf", &gunlukPark);
-    printf("Gunluk otoban gecis masraf�: ");
+    printf("Gunluk otoban gecis masrafi: ");
     scanf("%lf", &gunlukGecis);
     printf("Harici kisi sayisi: ");
     scanf("%d", &hariciKisiSayisi);

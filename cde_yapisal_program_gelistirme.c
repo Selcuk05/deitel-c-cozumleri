@@ -195,7 +195,7 @@ void _3_27(){
     }
 }
 
-// 3.27 - 3.31 sarkan if else örnekleri
+// 3.27 - 3.31 sarkan if else ornekleri
 
 void _3_32(){
     double kenarUzunluk;
@@ -436,7 +436,7 @@ void _3_47(){
     printf("Hedef atis hizi %d ile %d arasindadir.", minHedefAtisHizi, maxHedefAtisHizi);
 }
 
-// 3.48 Anlasilabilir degil. Anlatima gore birden fazla veri ayný sifreyi verir.
+// 3.48 Anlasilabilir degil. Anlatima gore birden fazla veri ayni sifreyi verir.
 
 int main(void){
     // _3_16();
