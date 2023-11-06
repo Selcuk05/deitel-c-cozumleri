@@ -195,8 +195,6 @@ void _3_27(){
     }
 }
 
-// 3.27 - 3.31 sarkan if else ornekleri
-
 void _3_32(){
     double kenarUzunluk;
     printf("kare kenar uzunlugu: ");
@@ -307,8 +305,6 @@ void _3_35(){
     printf("2(%d) = 10(%d)\n", cacheSayi, onlukSayi);
 }
 
-// 3.36 bilgisayariniz ne kadar hizli, 100 milyona kadar loop
-
 void _3_37(){
     int c = 1;
     while(c<=100){
@@ -349,10 +345,6 @@ void _3_39(){
         puts("");
     }
 }
-
-// 3.40 sonsuz dongu
-// 3.41 onceki bolumde benzeri yapildi
-// 3.42 yanlis tespiti
 
 void _3_43(){
     int sayi1, sayi2, sayi3;
@@ -427,7 +419,7 @@ void _3_46(){
 }
 
 void _3_47(){
-    int yas; // dogum gunu hesabi yapilabilir ama gereksiz.
+    int yas;
     printf("Yas: ");
     scanf("%d", &yas);
     int enYuksekAtisHizi = 220 - yas;
@@ -435,8 +427,6 @@ void _3_47(){
     int maxHedefAtisHizi = enYuksekAtisHizi * 85 / 100;
     printf("Hedef atis hizi %d ile %d arasindadir.", minHedefAtisHizi, maxHedefAtisHizi);
 }
-
-// 3.48 Anlasilabilir degil. Anlatima gore birden fazla veri ayni sifreyi verir.
 
 int main(void){
     // _3_16();

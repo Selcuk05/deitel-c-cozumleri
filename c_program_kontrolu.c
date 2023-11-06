@@ -192,6 +192,25 @@ void _4_19(){
     }
 }
 
+void _4_25(){
+    for(int s = 1; s <= 256; s++){
+        printf("Ikilik: ");
+
+        for (int i = 31; i >= 0; i--) { 
+            int k = s >> i;
+            if (k & 1){
+                printf("1"); 
+            }else{
+                printf("0"); 
+            }
+        } 
+
+        printf(", ");
+
+        printf("Sekizlik: %o, On altilik: %X\n", s, s);
+    }
+}
+
 int main(void){
     // _4_9();
     // _4_10();
@@ -203,4 +222,5 @@ int main(void){
     // _4_17();
     // _4_18();
     // _4_19();
+    // _4_25();
 }

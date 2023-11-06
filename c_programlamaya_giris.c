@@ -212,11 +212,6 @@ void _2_30(){
     int sayi;
     printf("Bes basamakli sayiyi giriniz: ");
     scanf("%d", &sayi);
-    /* while(sayi!=0){
-        int r = sayi%10;
-        printf("%d ", r);
-        sayi = (sayi-r)/10;
-    } */
     int onbinler = sayi/10000;
     sayi = sayi%10000;
     int binler = sayi/1000;
@@ -292,6 +287,6 @@ int main(void){
     // _2_30();
     // _2_31();
     // _2_32();
-    _2_33();
+    // _2_33();
     return 0;
 }
