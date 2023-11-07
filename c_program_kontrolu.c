@@ -211,6 +211,117 @@ void _4_25(){
     }
 }
 
+// verilen sayilara tam olarak hic ulasmadi, aralarda dolasiyor
+void _4_26(){
+    double payda = 1;
+    int sayac = 1;
+    double pi = 0;
+    printf("Terim\tPayda\t\tPi\n");
+    while(pi != 3.14159){
+        pi = pi + ((sayac % 2 == 0 ? -4 : 4) / payda);
+
+        printf("%d\t%lf\t%lf\n", sayac, payda, pi);
+        payda += 2;
+        sayac += 1;
+    }
+}
+
+void _4_27(){
+    printf("Kenar 1\tKenar 2\tHipotenus\n");
+    for(int i = 1; i < 500; i++){
+        for(int j = 1; j < 500; j++){
+            for(int k = 1; k < 500; k++){
+                if(i*i + j*j == k*k){
+                    printf("%d\t%d\t%d\n", i, j, k);
+                }
+            }
+        }
+    }
+}
+
+void _4_28(){
+    int odemeKodu;
+    puts("[1] Mudur");
+    puts("[2] Saatlik calisan");
+    puts("[3] Siparis calisani");
+    puts("[4] Parca calisani");
+    printf("Odeme kodu giriniz: ");
+    scanf("%d", &odemeKodu);
+
+    double sabitMaas;
+    double sabitSaatUcreti;
+    int calisilanSaat;
+    double haftalikSatis;
+    double parcaSabitUcreti;
+    int parcaSayisi;
+    switch(odemeKodu){
+        case 1:
+            printf("Sabit haftalik mudur maasi: ");
+            scanf("%lf", &sabitMaas);
+            printf("Haftalik mudur maasi: %lf\n", sabitMaas);
+            break;
+        case 2:
+            printf("Sabit saat ucreti: ");
+            scanf("%lf", &sabitSaatUcreti);
+            printf("Calisilan saat: ");
+            scanf("%d", &calisilanSaat);
+
+            double maas = (calisilanSaat <= 40) ? (calisilanSaat * sabitSaatUcreti) : (40 * sabitSaatUcreti + (calisilanSaat - 40) * sabitSaatUcreti * 1.5);
+            printf("Haftalik saatlik calisan maasi: %lf\n", maas);
+            break;
+        case 3:
+            printf("Haftalik brut satis: ");
+            scanf("%lf", &haftalikSatis);
+
+            maas = 250 + (haftalikSatis * 5.7) / 100;
+            printf("Haftalik siparis calisani maasi: %lf\n", maas);
+            break;
+        case 4:
+            printf("Parca sabit ucreti: ");
+            scanf("%lf", &parcaSabitUcreti);
+            printf("Parca sayisi: ");
+            scanf("%d", &parcaSayisi);
+
+            maas = parcaSabitUcreti * parcaSayisi;
+            printf("Haftalik parca calisani maasi: %lf\n", maas);
+            break;
+        default:
+            break;
+    }
+}
+
+void _4_31(){
+    for(int i = 1; i <= 9; i++){
+        if(i%2==0) continue;
+
+        int tarafBosluk = (9 - i) / 2;
+        for(int bs = 1; bs <= tarafBosluk; bs++){
+            printf(" ");
+        }
+
+        for(int y = 1; y <= i; y++){
+            printf("*");
+        }
+
+        printf("\n");
+    }
+
+    for(int i = 7; i >= 1; i--){
+        if(i%2==0) continue;
+
+        int tarafBosluk = (9 - i) / 2;
+        for(int bs = 1; bs <= tarafBosluk; bs++){
+            printf(" ");
+        }
+
+        for(int y = 1; y <= i; y++){
+            printf("*");
+        }
+
+        printf("\n");
+    }
+}
+
 int main(void){
     // _4_9();
     // _4_10();
@@ -223,4 +334,8 @@ int main(void){
     // _4_18();
     // _4_19();
     // _4_25();
+    // _4_26();
+    // _4_27();
+    // _4_28();
+    // _4_31();
 }
