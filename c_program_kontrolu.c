@@ -322,6 +322,82 @@ void _4_31(){
     }
 }
 
+void _4_33(){
+    printf("Sayi\tRoman\n");
+    for(int i = 1; i <= 100; i++){
+        int sayi = i;
+        printf("%d\t", sayi);
+        if(sayi == 100){
+            printf("C");
+            sayi = 0;
+        }
+
+        if(sayi >= 50){
+            printf("L");
+            sayi -= 50;
+        }
+
+        while(sayi >= 10) {
+            printf("X"); 
+            sayi -= 10;
+        }
+
+        if(sayi >= 5) {
+            if(sayi % 10 == 9) {
+                printf("IX");
+                sayi -= 9;
+            } else {
+                printf("V");
+                sayi -= 5;
+            }   
+        }
+
+        while(sayi > 0) {
+            if(sayi % 10 == 4) {
+                printf("IV");
+                sayi -= 4;
+            } else {
+                printf("I");
+                sayi -= 1;
+            }
+
+        }
+
+        printf("\n");
+    }
+}
+
+void _4_38(){
+    for(int i = 1; i<=3; i++){
+        int sayi = i;
+        printf("On the ");
+        switch(sayi){
+            case 3:
+                printf("third");
+                break;
+            case 2:
+                printf("second");
+                break;
+            case 1:
+                printf("first");
+                break;
+        }
+        printf(" day of Christmas my true love sent to me\n");
+        switch(sayi){
+            case 3:
+                printf("Three French hens\n");
+                sayi -= 1;
+            case 2:
+                printf("Two turtle doves\n");
+                sayi -= 1;
+            case 1:
+                printf("And a partridge in a pear tree.\n");
+        }
+
+        printf("\n");
+    }
+}
+
 int main(void){
     // _4_9();
     // _4_10();
@@ -338,4 +414,6 @@ int main(void){
     // _4_27();
     // _4_28();
     // _4_31();
+    // _4_33();
+    // _4_38();
 }
