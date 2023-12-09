@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h> 
+#include <time.h> 
 
 // 5.9
 double calculateCharges(double hour){
@@ -302,6 +304,203 @@ void _5_26(){
     }
 }
 
+// 5.27
+int prime(int number){
+    if(number == 1 || number == 0){
+        return 0;
+    }
+
+    if(number % 2 == 0){
+        if(number == 2){
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+
+    int c = 1;
+    while(c <= number){
+        if(number % c == 0 && (c != 1 && c != number)){
+            return 0;
+        }
+
+        if(c == number){
+            return 1;
+        }
+
+        c += 1;
+    }
+}
+
+void _5_27(){
+    int lastPrime;
+    for(int c = 1; c <= 10000; c++){
+        if(prime(c)){
+            lastPrime = c;
+        }
+    }
+
+    printf("10000\'den onceki en son asal: %d", lastPrime);
+}
+
+// 5.28
+int reverse(int number){
+    int stepCount = 0;
+    int cacheNum = number;
+    while(cacheNum != 0){
+        cacheNum = cacheNum / 10;
+        stepCount += 1;
+    }
+    printf("%d\n", stepCount);
+
+    int reversed = 0;
+    while(number != 0 && stepCount != 0){
+        int curStep = number % 10;
+        number = number / 10;
+        reversed += curStep * pow(10, stepCount - 1);
+        stepCount -= 1;
+    }
+
+    return reversed;
+}
+
+void _5_28(){
+    printf("7631 tersten: %d\n", reverse(7631));
+}
+
+// 5.29
+int gcd(int n1, int n2){
+    int val = 1;
+    for(int c = 1; c <= n1 && c <= n2; c++){
+        if(n1 % c == 0 && n2 % c == 0){
+            val *= c;
+        }
+    }
+
+    return val;
+}
+
+void _5_29(){
+    printf("15-50 EBOB: %d", gcd(15, 50));
+}
+
+// 5.30
+int qualityPoints(int n1, int n2, int n3){
+    int avg = (n1 + n2 + n3) / 3;
+    if(90 <= avg && avg <= 100){
+        return 4;
+    }
+
+    if(80 <= avg && avg <= 89){
+        return 3;
+    }
+
+    if(70 <= avg && avg <= 79){
+        return 2;
+    }
+
+    if(60 <= avg && avg <= 69){
+        return 1;
+    }
+
+    return 0;
+}
+
+void _5_30(){
+    int avgNote = qualityPoints(80, 60, 70);
+    printf("Ortalama harf notu: %d", avgNote);
+}
+
+// 5.31
+int flip(){
+    int i = rand() % 2;
+    if (i == 0)
+        return 0;
+    else
+        return 1;
+}
+
+void _5_31(){
+    int yazi = 0;
+    int tura = 0;
+    for(int i = 1; i <= 100; i++){
+        int atis = flip();
+        if(atis == 0){
+            yazi++;
+        }else if(atis == 1){
+            tura++;
+        }
+    }
+
+    printf("Yazi: %d, Tura: %d", yazi, tura);
+}
+
+void _5_32(){
+    srand(time(NULL));
+    int num = rand() % 1000;
+    while(1){
+        int tahmin;
+
+        printf("Tahmin (bitirmek için -1): ");
+        scanf("%d", &tahmin);
+
+        if(tahmin == -1){
+            printf("Oyun bitirildi. Sayi: %d\n", num);
+            break;
+        }
+
+        if(tahmin == num){
+            printf("Buldun!\n");
+            break;
+        }
+
+        if(tahmin < num){
+            printf("Daha buyuk!\n");
+            continue;
+        }
+
+        if(tahmin > num){
+            printf("Daha kucuk!\n");
+            continue;
+        }
+    }
+}
+
+// 5.34
+int power(int base, int exp){
+    if(exp == 1){
+        return base;
+    }
+    int p = base * power(base, exp-1);
+
+    return p;
+}
+
+void _5_34(){
+    printf("3^4 = %d", power(3, 4));
+}
+
+// 5.35
+int fibonacci(int term){
+    if(term < 2){
+        return term;
+    }
+
+    int a = 0;
+    int b = 1;
+    for(int i = 2; i < term; i++){
+        int t = b;
+        b = b + a;
+        a = t;
+    }
+
+    return a + b;
+}
+
+void _5_35(){
+    printf("Fibonacci(9): %d", fibonacci(9));
+}
+
 int main(void){
     // _5_9();
     // _5_10();
@@ -316,6 +515,14 @@ int main(void){
     // _5_23();
     // _5_24();
     // _5_25();
-    _5_26();
+    // _5_26();
+    // _5_27();
+    // _5_28();
+    // _5_29();
+    // _5_30();
+    // _5_31();
+    // _5_32();
+    // _5_34();
+    _5_35();
     return 0;
 }
