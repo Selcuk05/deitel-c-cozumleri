@@ -501,6 +501,33 @@ void _5_35(){
     printf("Fibonacci(9): %d", fibonacci(9));
 }
 
+// 5.36
+void hanoi(int n, int first, int final, int cache){
+    if(n == 1){
+        printf("Disk %d | %d -> %d\n", n, first, final);
+        return;
+    }
+
+    hanoi(n-1, first, cache, final);
+    printf("Disk %d | %d -> %d\n", n, first, final);
+    hanoi(n-1, cache, final, first);
+}
+
+void _5_36(){
+    hanoi(3, 1, 3, 2); // 3 disk, 1. çividen 3. çiviye
+}
+
+// 5.41
+int pointDist(int x1, int y1, int x2, int y2){
+    int yDist = abs(y2 - y1);
+    int xDist = abs(x2 - x1);
+    return sqrt((xDist * xDist) + (yDist * yDist));
+}
+
+void _5_41(){
+    printf("(0, 0), (3, 4) -> %d", pointDist(0, 0, 3, 4));
+}
+
 int main(void){
     // _5_9();
     // _5_10();
@@ -523,6 +550,8 @@ int main(void){
     // _5_31();
     // _5_32();
     // _5_34();
-    _5_35();
+    // _5_35();
+    // _5_36();
+    _5_41();
     return 0;
 }
