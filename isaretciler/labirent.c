@@ -17,36 +17,24 @@ void mazeTraverse(char m[][BOYUT], int row, int col){
     }
 
     if(m[row][col+1] == '.'){ // kusbakisi saga dogru kontrol
+        m[row][col] = '.';
         mazeTraverse(m, row, col+1);
         return;
     }
 
     if(m[row-1][col] == '.'){ // kusbakisi yukari dogru kontrol
+         m[row][col] = '.';
         mazeTraverse(m, row-1, col);
         return;
     }
 
     if(m[row+1][col] == '.'){ // kusbakisi asagi dogru kontrol
+         m[row][col] = '.';
         mazeTraverse(m, row+1, col);return;
     }
 
     if(m[row][col-1] == '.'){ // kusbakisi sola dogru kontrol
-        mazeTraverse(m, row, col-1);return;
-    }
-
-    if(m[row][col+1] == 'X'){ // kusbakisi saga dogru kontrol
-        mazeTraverse(m, row, col+1);return;
-    }
-
-    if(m[row-1][col] == 'X'){ // kusbakisi yukari dogru kontrol
-        mazeTraverse(m, row-1, col);return;
-    }
-
-    if(m[row+1][col] == 'X'){ // kusbakisi asagi dogru kontrol
-        mazeTraverse(m, row+1, col);return;
-    }
-
-    if(m[row][col-1] == 'X'){ // kusbakisi sola dogru kontrol
+         m[row][col] = '.';
         mazeTraverse(m, row, col-1);return;
     }
 }
